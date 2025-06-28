@@ -1,0 +1,59 @@
+\chapter{Wprowadzenie}
+\label{cha:wprowadzenie}
+
+Kolejka FIFO (First In, First Out) to struktura danych, w której elementy sa˛ przetwarzane w takiej
+kolejności, w jakiej zostały dodane. Oznacza to, że pierwszy element dodany do kolejki zostanie również
+jako pierwszy z niej usunięty — dokładnie jak kolejka ludzi w sklepie. Celem projektu jest stworzenie graficznej aplikacji komputerowej do zarządzania zamówieniami klientów przy użyciu struktury kolejki FIFO. Aplikacja umożliwia dodawanie zamówień, ich realizację oraz przeglądanie zapisanych danych klientów. Dane zapisywane są w bazie danych MySQL. Projekt łączy technologię Swing (interfejs graficzny) z JDBC (połączenie z bazą danych). Kluczowe cechy FIFO:
+\begin{itemize}
+	\item Dodawanie — nowy element trafia na koniec kolejki.
+	\item Usuwanie — element usuwany jest z początku kolejki.
+	\item Zastosowanie — systemy kolejkowe, buforowanie, drukarki, planowanie zadań (np. w systemach operacyjnych), sieci komputerowe itp.
+\end{itemize}
+
+%---------------------------------------------------------------------------
+
+
+\section{Opis założeń projektu}
+\label{sec:Opis założeń projektu}
+
+Celem poniższej pracy jest symulacja kolejki FIFO w języku Java w kontekście zamówień w sklepie. Podstawowym założeniem jest, aby obsługiwać zamówienia w kolejności, w jakiej zostały złożone. Oznacza to, że zamówienie, które pojawiło się jako pierwsze, będzie realizowane jako pierwsze, a dopiero w następnej kolejności te złożone później. Problemem rozwiązywanym przez aplikację jest brak uporządkowanego systemu obsługi zamówień, co często prowadzi do chaosu, opóźnień oraz braku przejrzystości w kolejności realizacji zleceń. Korzyści kolejki:
+\begin{itemize}
+	\item Zmniejszenie ryzyka pomyłek
+	\item Zadowolenie klientów
+	\item Sprawiedliwość
+	\item Prostota i przejrzystość
+	\item Zachowanie kolejności obsługi
+\end{itemize} 
+Głównym źródłem problemu jest brak informatyzacji w małych podmiotach, które nie posiadają systemu ERP ani dedykowanego narzędzia do zarządzania kolejkami. Problem ten jest ważny, ponieważ wpływa na jakość obsługi klienta, czas realizacji zamówień i efektywność operacyjną.
+
+% ------------------------
+Wymagania funkcjonalne:
+\begin{itemize}
+	\item Dodawanie nowego zamówienia do kolejki.
+	\item Pobieranie zamówienia (realizacja) z kolejki.
+	\item Zapisywanie zamówienia do bazy danych.
+	\item Wyświetlanie listy klientów i ich zamówień z bazy danych
+	\item Obsługa wielu produktów w jednym zamówieniu.
+	\item Interfejs graficzny pozwalający na interakcję z użytkownikiem.
+\end{itemize}
+
+% ------------------------
+Wymagania niefunkcjonalne:
+\begin{itemize}
+	\item Intuicyjny interfejs graficzny
+	\item Działanie aplikacji offline z możliwością zapisu do lokalnej bazy danych
+	\item Niska awaryjność i obsługa błędów
+	\item Szybkość działania nawet przy większej liczbie zamówień
+	\item Minimalne wymagania sprzętowe.
+\end{itemize}
+%---------------------------------------------------------------------------
+\section{Zawartosć pracy}
+\label{sec:Zawartosć pracy:}
+W projekcie zawarto 7 klas o następującej hierarchi:
+\begin{itemize}
+	\item GUI – klasa odpowiedzialna za interfejs graficzny (JFrame). Obsługuje przyciski: dodaj, pobierz, pokaż klientów.
+	\item KolejkaZamówień – logika kolejki FIFO, oparta na LinkedList. Metody: dodajZamowienie(), pobierzZamowienie(), isEmpty().
+	\item Klient, Produkt, Zamówienie – klasy modelowe reprezentujące dane
+	\item MenagerBazyDanych – obsługuje połączenie z MySQL oraz operacje: dodajZamowienie(), pobierzZamowienia().
+\end{itemize}
+W Projekcie użyto także Bazy danych MYSQL

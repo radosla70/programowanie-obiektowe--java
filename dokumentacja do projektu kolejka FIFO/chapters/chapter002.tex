@@ -1,0 +1,126 @@
+\chapter{Opis struktury projektu}
+\label{cha:Opis struktury projektu}
+
+Projekt został zaimplementowany w języku Java z wykorzystaniem bibliotek Swing i JDBC. Dane są przechowywane w relacyjnej bazie danych MySQL.
+W projekcie zastosowano 7 klas oraz plik mysql-connector-j-9.3.0.jar jest to sterownik, który umożliwia połączenie programu z bazą danych MYSQL.
+
+%---------------------------------------------------------------------------
+
+\section{Polecenie SQL:}
+\label{sec:Polecenie SQL:}
+
+% ------------------------
+\begin{lstlisting}
+CREATE DATABASE IF NOT EXISTS zamowienia_db;
+USE zamowienia_db;
+
+CREATE TABLE IF NOT EXISTS zamowienia (
+id INT AUTO_INCREMENT PRIMARY KEY,
+imie VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS produkty (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nazwa VARCHAR(255) NOT NULL,
+cena DOUBLE NOT NULL,
+zamowienie_id INT,
+FOREIGN KEY (zamowienie_id) REFERENCES zamowienia(id) ON DELETE CASCADE
+);
+\end{lstlisting}
+%---------------------------------------------------------------------------
+
+
+% ------------------------
+\section{Zarządzanie danymi i baza danych:}
+\label{sec:Zarządzanie danymi i baza danych:}
+
+\begin{itemize}
+	\item Tabela zamowienia: ID, imie, email
+
+
+%
+\begin{table}[H]
+	\centering
+	\caption{Tabela Zamówienia (Baza danych)\label{tab}}
+	\renewcommand{\tabularxcolumn}[1]{m{#1}}  % Dostosowanie kolumny do zawartości
+	\newcolumntype{C}{>{\centering\arraybackslash}X}
+	\begin{tabularx}{\linewidth}{CCC}
+		\toprule
+		\textbf{Kolumna}              & \textbf{Typ}              & \textbf{Uwagi}         \\
+		\midrule
+		\multirow[m]{1}{*}{id} & INT                     & AUTO INCREMENT, PK              \\
+		\midrule
+		\multirow[m]{1}{*}{imie} & VARCHAR(255)                     & Imię i nazwisko             \\
+		\midrule
+		\multirow[m]{1}{*}{e-mail} & VARCHAR(255)                     & Adres e-mail              \\
+		\midrule
+		
+	\end{tabularx}
+\end{table}
+
+% ------------------------------------------------------------------------
+	\item Tabela produkty: ID, nazwa, cena, zamowienieid.
+
+\begin{table}[H]
+	\centering
+	\caption{Tabela produkty (Baza danych)\label{tab1}}
+	\renewcommand{\tabularxcolumn}[1]{m{#1}}  % Dostosowanie kolumny do zawartości
+	\newcolumntype{C}{>{\centering\arraybackslash}X}
+	\begin{tabularx}{\linewidth}{CCC}
+		\toprule
+		\textbf{Kolumna}              & \textbf{Typ}              & \textbf{Uwagi}         \\
+		\midrule
+		\multirow[m]{1}{*}{id} & INT                     & AUTOINCREMENT, PK              \\
+		\midrule
+		\multirow[m]{1}{*}{nazwa} & VARCHAR(255)                     & Nazwa produktu             \\
+		\midrule
+		\multirow[m]{1}{*}{cena} & DOUBLE                     & Cena jednostkowa              \\
+		\midrule
+		\multirow[m]{1}{*}{zamowienie id} & INT                     & FK -> zamowienia(id)              \\
+		\midrule
+		
+	\end{tabularx}
+\end{table}
+\end{itemize}
+%---------------------------------------------------------------------------
+
+\section{Dane Techniczne:}
+\label{sec:Narzędzia:}
+Minimalne wymagania sprzętowe:
+\begin{itemize}
+	\item Procesor: 1.5 GHz,
+	\item RAM: 2 GB
+	\item Dysk: 100 MB wolnego miejsca
+	\item Zainstalowana Java 8+
+	\item System operacyjny: Windows 10+ lub Linux
+\end{itemize}
+Narzędzia:
+\begin{itemize}
+      \item IntelliJ IDEA.
+      \item MySQL Server
+      \item JDBC
+      \item Java SE
+      \item Swing GUI Designer
+\end{itemize}
+
+%---------------------------------------------------------------------------
+
+
+\section{Działanie}
+
+
+      \begin{enumerate}
+            \item Użytkownik uruchamia aplikację (Main –> GUI).
+            \item GUI pokazuje okno z przyciskami: "Dodaj", "Pobierz", "Poka˙z klientów".
+            \item Użytkownik dodaje zamówienie:
+            \begin{itemize}
+            	\item Podaje dane klienta i list˛e produktów przez JOptionPane.
+            	\item Zamówienie trafia do kolejki FIFO (KolejkaZamówień).
+            	\item Dane są zapisywane do bazy danych (MenagerBazyDanych).
+            \end{itemize} 
+            \item Użytkownik może zrealizować zamówienie z kolejki.
+            \item Może również podejrzeć wszystkie zapisane zamówienia z bazy.
+		\end{enumerate}
+
+
