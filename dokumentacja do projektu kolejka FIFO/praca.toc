@@ -1,0 +1,22 @@
+\babel@toc {polish}{}\relax 
+\contentsline {chapter}{\numberline {1}Wprowadzenie}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Opis założeń projektu}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Zawartosć pracy}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Opis struktury projektu}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Polecenie SQL:}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Zarządzanie danymi i baza danych:}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dane Techniczne:}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Działanie}{9}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Prezentacja elementów projektu:}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Prezentacja warstwy użytkowej}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Bazy Danych MySQL}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Prezentacja kodu}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Podsumowanie}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Podsumowanie ogólne}{20}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Harmonogram realizacji projektu}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Wnioski}{20}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Oświadczenie studenta o samodzielności pracy}{21}{section.4.4}%
+\contentsline {section}{\textbf {Bibliografia}}{22}{figure.caption.14}%
+\contentsline {section}{\textbf {Spis rysunków}}{23}{chapter*.15}%
+\contentsline {section}{\textbf {Spis tabel}}{24}{chapter*.15}%
+\contentsline {section}{\textbf {Spis listingów}}{25}{chapter*.15}%
